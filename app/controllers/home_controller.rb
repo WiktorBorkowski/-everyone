@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   def index; end
 
+  def signup; end
+
   def initiate_call
     client = Twilio::REST::Client.new(
       ENV.fetch("TWILIO_ACCOUNT_SID"),
