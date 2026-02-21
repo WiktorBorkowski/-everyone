@@ -1,0 +1,14 @@
+one:
+  user: one
+  name: Mum
+  phone_e164: +353861112222
+  relationship: parent
+  tier: 1
+  priority: 0
+  active: true
+  consent_status: confirmed
+  consent_confirmed_at: 2026-02-21 10:00:00
+  timezone: Europe/Dublin
+  response_count: 1
+  miss_count: 0
+  avg_answer_seconds: 12
