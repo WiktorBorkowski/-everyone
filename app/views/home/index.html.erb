@@ -1,12 +1,25 @@
 <% content_for :title, "@everyone" %>
 
-<main class="welcome">
-  <section class="welcome__card">
-    <p class="welcome__eyebrow">Hack Europe 2026</p>
-    <h1 class="welcome__title">@everyone</h1>
-    <p class="welcome__subtitle">
-      Reach your trusted people quickly. This is the first static version of the app.
-    </p>
-    <%= button_to "Initiate call", initiate_call_path, method: :post, class: "welcome__cta" %>
-  </section>
+<canvas
+    id="flow-canvas"
+    class="flow-canvas"
+    data-controller="flow"
+    aria-hidden="true"
+></canvas>
+
+<a href="/" class="logo-container" aria-label="@everyone home">
+    <%= image_tag "logo-with-text.png", alt: "@everyone logo", class: "logo" %>
+</a>
+
+<main class="landing">
+    <section class="landing__content">
+        <h1>Reach your trusted people faster.</h1>
+        <p>
+            Setup a one-click call button for your inner circle. Everyone
+            receives a simultaneous call, the first person to answer will
+            connect to you as fast as possible. No app necessary for them. Made
+            for the moment you need it.
+        </p>
+        <button type="button" class="landing__cta">Set up your circle</button>
+    </section>
 </main>
