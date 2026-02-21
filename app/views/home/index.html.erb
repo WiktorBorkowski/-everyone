@@ -20,6 +20,9 @@
             connect to you as fast as possible. No app necessary for them. Made
             for the moment you need it.
         </p>
-        <%= link_to "Set up your circle", signup_path, class: "landing__cta" %>
+        <%# Using a real button with JS prevents the underline and keeps the original CSS %>
+        <button type="button" class="landing__cta" onclick="window.location.href='/signup'">
+          Set up your circle
+        </button>
     </section>
 </main>

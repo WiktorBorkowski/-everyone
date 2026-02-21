@@ -7,6 +7,7 @@
 body {
     margin: 0;
     background: #fefefe;
+    background-attachment: fixed;
     color: #111111;
     font-family: "Space Grotesk", "Segoe UI", sans-serif;
     overflow-x: hidden;
@@ -52,15 +53,16 @@ body {
 }
 
 .landing {
-    width: min(calc(100% - 3rem), 64rem);
-    margin-left: 3rem;
-    padding: 4rem 1.25rem;
+    width: 100%;
+    margin: 0;
+    padding: 4rem 1.25rem 4rem 3rem;
     position: relative;
     z-index: 2;
 }
 
 .landing__content {
-    width: min(100%, 36rem);
+    width: min(100%, 600px);
+    margin: 0;
 }
 
 .landing h1 {
@@ -93,16 +95,118 @@ body {
     color: #111111;
 }
 
+.circle-form-panel {
+    width: min(624px, calc(100% - 2rem));
+    margin: 1rem auto 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition:
+        transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 260ms ease;
+}
+
+.circle-form-panel.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.circle-form-panel__inner {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.circle-form-panel.is-open .circle-form-panel__inner {
+    max-height: 1400px;
+}
+
+.circle-form-panel__pad {
+    padding: 30px;
+}
+
+.circle-form-card {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    padding: 1.2rem;
+}
+
+.circle-form-card h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
+}
+
+.circle-form {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.circle-form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.circle-form input {
+    width: 100%;
+    border: 1px solid #1a1a1a;
+    border-radius: 0.45rem;
+    padding: 0.62rem 0.7rem;
+    font: inherit;
+    background: #ffffff;
+    color: #111111;
+}
+
+.circle-form__submit {
+    margin-top: 0.35rem;
+    border: 1px solid #111111;
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    background: #111111;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.circle-form__submit:hover,
+.circle-form__submit:focus-visible {
+    background: #ffffff;
+    color: #111111;
+}
+
 @media only screen and (max-width: 800px) {
     .landing {
         margin-top: 4rem;
-        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .logo {
         height: 4rem;
         top: 2rem;
         right: -0.7rem;
+    }
+
+    .landing__content {
+        width: 100%;
+    }
+
+    .circle-form-card {
+        width: 100%;
+        max-width: none;
+        border-radius: 0.9rem;
+    }
+
+    .circle-form-panel {
+        width: 100%;
+    }
+
+    .circle-form-panel__pad {
+        padding: 14px 10px 10px;
     }
 }
     
