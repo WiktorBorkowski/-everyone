@@ -1,24 +1,24 @@
-# README
+# @everyone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple app that lets you quickly reach your trusted people in different situations (mental health, check-ins, other scenarios).
 
-Things you may want to cover:
+This repo contains the Ruby on Rails backend.
 
-* Ruby version
+## What it does (backend)
+- Stores users and their trusted contacts
+- Starts a “session” when a user triggers @everyone
+- Calls multiple contacts at once (first person to pick up gets connected)
+- Sends SMS updates to the other contacts
 
-* System dependencies
+## Tech
+- Ruby on Rails (API / backend)
+- Twilio (Voice + SMS)
 
-* Configuration
+## Requirements
+- Ruby (match the version in `.ruby-version`)
+- Bundler
+- Twilio account + phone number
 
-* Database creation
+## Setup (local)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TODO
